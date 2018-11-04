@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>about php</title>
+    <link type="text/css" href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="main-doc">
+        <ul class="card tab">
+                  <li class="tablinks"  style="margin-top:30px;"><a href="#introduction_to_php">Intro</a></li>
+                  <li class="tablinks"><a href="#environment_setup">Setup</a></li>
+                  <li class="tablinks" ><a href="#syntax_overview">Syntax Overview</a></li>
+                  <li class="tablinks"><a href="#variable_types">variables</a></li>
+                  <li class="tablinks"><a href="#operator_types">Operators</a></li>
+        </ul>
+        <div class="main-section" id="introduction_to_php" name="introduction_to_php">
+            <h1>Introduction to PHP</h1>
+            <p>The PHP Hypertext Preprocessor (PHP) is a programming language that allows web developers to create dynamic content that interacts with databases. PHP is basically used for developing web based software applications. </p>
+            <p>PHP is a server side scripting language that is embedded in HTML. It is used to manage dynamic content, databases, session tracking, even build entire e-commerce sites.</p>
+            <p>PHP is a recursive acronym for "PHP: Hypertext Preprocessor".</p>
+            <p>It is integrated with a number of popular databases, including MySQL, PostgreSQL, Oracle, Sybase, Informix, and Microsoft SQL Server</p>
+            <p>PHP is pleasingly zippy in its execution, especially when compiled as an Apache module on the Unix side. The MySQL server, once started, executes even very complex queries with huge result sets in record-setting time</p>
+            <p>PHP supports a large number of major protocols such as POP3, IMAP, and LDAP. PHP4 added support for Java and distributed object architectures (COM and CORBA), making n-tier development a possibility for the first time</p>
+            <p>PHP performs system functions, i.e. from files on a system it can create, open, read, write, and close them</p>
+            <p>PHP can handle forms, i.e. gather data from files, save data to a file, through email you can send data, return data to the user</p>
+            <p>You add, delete, modify elements within your database through PHP</p>
+            <p>Using PHP, you can restrict users to access some pages of your website</p>
+        </div>
+        <div class="main-section" id="environment_setup" name="environment_setup">
+                <h1>Environment setup</h1>
+               <P>In order to develop and run PHP Web pages, three vital components need to be installed on your computer system. </P>
+               <P><b>Web Server</b> - PHP will work with virtually all Web Server software, including Microsoft's Internet Information Server (IIS) but then most often used is freely available Apache Server. Download Apache for free here: <a href="http://httpd.apache.org/download.cgi">http://httpd.apache.org/download.cgi</a> </P>
+               <p><b>Database</b> - PHP will work with virtually all database software, including Oracle and Sybase but most commonly used is freely available MySQL database. Download MySQL for free here: 
+                    <a href="http://www.mysql.com/downloads/index.html">http://www.mysql.com/downloads/index.html</a></p>
+                <p><b>PHP Parser</b> - In order to process PHP script instructions, a parser must be installed to generate HTML output that can be sent to the Web Browser. This tutorial will guide you how to install PHP parser on your computer. </p>
+                <h3>PHP parser Installation</h3>
+                <hr />
+                <p>Before you proceed, it is important to make sure that you have a proper environment setup on your machine to develop your web programs using PHP.  </p>
+                <table>
+                    <tr>
+                        <td>
+                                http://127.0.0.1/info.php  
+                        </td>
+                    </tr>
+                </table>
+               <p>If this displays a page showing your PHP installation related information, then it means you have PHP and Webserver installed properly. Otherwise you have to follow given procedure to install PHP on your computer</p>
+               <h3>Apache Configuration for PHP </h3>
+               <hr />
+               <p>Apache uses httpd.conf file for global settings, and the .htaccess file for per-directory access settings. Older versions of Apache split up httpd.conf into three files (access.conf, httpd.conf, and srm.conf), and some users still prefer this arrangement. </p>
+               <p>Apache server has a very powerful, but slightly complex, configuration system of its own. Learn more about it at the Apache Web site: <a href="www.apache.org">www.apache.org</a></p>
+               <p>The following section describes settings in httpd.conf that affect PHP directly and cannot be set elsewhere. If you have standard installation, then httpd.conf will be found at /etc/httpd/conf: </p>
+               <p><b>Time Out</b> - This value sets the default number of seconds before any HTTP request will time out. If you set PHP's max_execution_time to longer than this value, PHP will keep grinding away but the user may see a 404 error. In safe mode, this value will be ignored; you must use the timeout value in php.ini instead </p>
+               <p><b>DocumentRoot</b> - DocumentRoot designates the root directory for all HTTP processes on that server. It looks something like this on Unix: 
+                <table>
+                        <tr>
+                            <td>
+                                    DocumentRoot ./usr/local/apache_1.3.6/htdocs. 
+                            </td>
+                        </tr>
+                    </table>
+            </p>
+            <p>You can choose any directory as document root. </p>
+            </div>
+    </div>
+    <div class="main-section" id="syntax_overview">
+            <h1>Syntax Overview</h1>
+            <h3>Escaping to PHP</h3>
+            <hr />
+            <p>The PHP parsing engine needs a way to differentiate PHP code from other elements in the page. The mechanism for doing so is known as 'escaping to PHP.' There are four ways to do  this:  </p>
+            <h3>Canonical PHP tags  </h3>
+            <p>The most universally effective PHP tag style is: &Precedes;?php ... ?&Succeeds; </p>
+            <h3>Commenting PHP Code </h3>
+            <hr />
+            <p>A comment is the portion of a program that exists only for the human reader and stripped out before displaying the programs result. There are two commenting formats in PHP: </p>
+            <p><b>Single-line comments</b> - : They are generally used for short explanations or notes relevant to the local code. Here are the examples of single line comments</p>
+
+            <table>
+                <tr>
+                    <td>
+                            &Precedes;? 
+<p># This is a comment, and </p>
+<p># This is the second line of the comment </p>
+<p>// This is a comment too. Each style comments only print "An example with single line comments"; </p>
+?&Succeeds;
+                    </td>
+                </tr>
+            </table>
+            <p><b>Multi-line printing</b> - Here are the examples to print multiple lines in a single print statement: </p>
+            <table>
+                    <tr>
+                        <td>
+                                &Precedes;? 
+   <p># First Example print </p>
+   &Precedes;&Precedes;&Precedes;END <br />
+    <p>This uses the "here document" syntax to output multiple lines with $variable interpolation. Note that the here document terminator must appear on a line with just a semicolon no extra whitespace! 
+    END; <br />
+    # Second Example print "This spans 
+    multiple lines. The newlines will be output as well"; 
+    </p>>
+    ?&Succeeds;
+                        </td>
+                    </tr>
+                </table>
+        </div>
+
+        <div class="main-section card" id="variable_types">
+                <h1>Variable Types</h1>
+                <h3>Braces make blocks</h3>
+                <hr />
+                <p>Although statements cannot be combined like expressions, you can always put a sequence of statements anywhere a statement can go by enclosing them in a set of curly braces. Here both statements are equivalent: </p>
+                <table>
+                        <tr>
+                            <td>
+                               <code>
+                                    if (3 == 2 + 1) <br />
+                                    print("Good - I haven't totally lost my mind."); 
+                                   <br />
+                                  if (3 == 2 + 1) 
+                                  { <br />
+                                     print("Good - I haven't totally");  <br />  print("lost my mind."); <br />
+                                  }                                   
+                               </code>
+                            </td>
+                        </tr>
+                    </table>
+                    <h3>Running PHP Script from Command Prompt </h3>
+                    <hr />
+                    <p>Yes you can run your PHP script on your command prompt. Assuming you have the  following content in test.php file  </p>
+                    <table>
+                            <tr>
+                                <td>
+                                   <code>
+                                        &Precedes;?php  <br />
+   echo "Hello PHP!!!!!"; <br /> ? &Succeeds;   
+                                   </code>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>Now run this script as command prompt as follows:  </p>
+                        <code>
+                            $php test.php
+                        </code>
+                        <p>The main way to store information in the middle of a PHP program is by using a variable. Here are the most important things to know about variables in PHP</p>
+                        <ol>
+                            <li>All variables in PHP are denoted with a leading dollar sign ($). </li>
+                            <li>The value of a variable is the value of its most recent assignment. </li>
+                            <li>Variables are assigned with the = operator, with the variable on the left-hand side and the expression to be evaluated on the right</li>
+                            <li>Variables in PHP do not have intrinsic types - a variable does not know in advance whether it will be used to store a number or a string of characters</li>
+                            <li>PHP does a good job of automatically converting types from one to another when necessary. </li>
+                        </ol>
+                        <h3>constants</h3>
+                        <hr />
+                        <p>A  constant is a name or an identifier for a simple value. A constant value cannot change during the execution of the script. By default, a constant is case-sensitive. By convention, constant identifiers are always uppercase. A constant name starts with a letter or underscore, followed by any number of letters, numbers, or underscores. If you have defined a constant, it can never be changed or undefined. </p>
+                        <p>To define a constant you have to use define() function and to retrieve the value of a constant, you have to simply specifying its name. Unlike with variables, you do not need to have a constant with a $. You can also use the function constant() to read a constant's value if you wish to obtain the constant's name dynamically. constant() function </p>
+            </div>
+
+            <div class="main-section card" id="operator_types">
+                    <h1>Operator Types</h1>
+                    <p><b>What is Operator?</b> Simple answer can be given using expression 4 + 5 is equal to 9. Here 4 and 5 are called operands and + is called operator. PHP language supports following type of operators</p>
+                    <ul>
+                        <li>Arithmetic Operators </li>
+                        <li>Comparison Operators </li>
+                        <li>Logical (or Relational) Operators </li>
+                        <li>Assignment Operators </li>
+                        <li>Conditional (or ternary) Operators </li>
+                    </ul>
+                    <p>Let’s have a look on all operators one by one. </p>
+                    <h3>Arithmetic Operators </h3>
+                    <hr />
+                    <table>
+                        <tr>
+                            <td>Operator</td>
+                            <td>Description</td>
+                        </tr>
+                        <tr>
+                            <td>+</td>
+                            <td>Adds two or more operands</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Subtracts operands</td>
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td>multiplies operands</td>
+                        </tr>
+                        <tr>
+                            <td>/</td>
+                            <td>divides operands</td>
+                        </tr>
+                        <tr>
+                            <td>%</td>
+                            <td>finds the reainder of operands</td>
+                        </tr>
+                        <tr>
+                            <td>++</td>
+                            <td>increases integer operands by one</td>
+                        </tr>
+                    </table>
+                </div>
+
+</div>
+    <script>
+    function open(evt,topic) {
+        var i,tabcontent,tablinks;
+        tabcontent = document.getElementsByClassName("main-section");
+        for(i=0;tabcontent.length;i++){
+            tabcontent[i].style.display = "none";
+        }
+        tablinks =document.getElementsByClassName("tablinks");
+        for(i=0; i<tablinks.length;i++){
+            tablinks[i].className = tablinks[i].className.replace("active","");
+        }
+        document.getElementById(topic).style.display = "block";
+        evt.currentTarget.className += "active";
+    }
+    </script>
+</body>
+</html>

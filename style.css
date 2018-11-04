@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+}
+
+/* to style the headings*/
+h1{
+    color: #4CAF50;
+    font-style: italic;
+    font-style: "Algerian", Times, serif;
+}
+
+.main-section{
+    margin-left:27%;
+    padding:1px 16px;
+    background-color: #555;
+    color: #f1f1f1;
+  /*  display: none; */
+}
+
+.main-section p{
+    padding-left: 50px;
+    width: 70%;
+    font-style: "Proxima Nova",Times, serif;
+    font-size: 20px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    font-style: "Arial Rounded MT Bold", "Times", "serif";
+}
+
+li a.active {
+    background-color: #555;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #4CAF50;
+    color: #555;
+}
+
+/*adding a shadow to the side menu card */
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+/*showing a more visible shadow when a user hovers over the menu with a mouse */
+.card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+@media screen and (min-width: 480px) {
+    h1{
+        color: #4CAF50;
+    }
+}
